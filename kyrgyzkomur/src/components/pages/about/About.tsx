@@ -1,10 +1,8 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import { ChevronRight, Building2, Target } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./About.scss";
 
 const companies = [
@@ -32,22 +30,15 @@ const navLinks = [
 ];
 
 const About: FC = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
-
   return (
     <section id="About">
       <div className="container">
         <div className="About">
           <div className="About__content">
-            <div className="About__header" data-aos="fade-right">
+            <div className="About__header">
               <h2>Товарищество угледобывающих предприятий</h2>
             </div>
-            <div className="About__intro" data-aos="fade-up">
+            <div className="About__intro">
               <p>
                 В 2012 году угледобывающие предприятия Кыргызской Республики
                 объединились и создали консорциум, который в 2016 году был
@@ -85,7 +76,7 @@ const About: FC = () => {
               </p>
             </div>
 
-            <div className="About__section" data-aos="fade-up">
+            <div className="About__section">
               <h3>
                 <Building2 size={22} />
                 <span>Состав Товарищества</span>
@@ -112,7 +103,7 @@ const About: FC = () => {
               </div>
             </div>
 
-            <div className="About__section" data-aos="fade-up">
+            <div className="About__section">
               <h3>
                 <Target size={22} />
                 <span>Основными задачами Товарищества, являются:</span>
@@ -137,7 +128,7 @@ const About: FC = () => {
               </ul>
             </div>
 
-            <div className="About__section" data-aos="fade-up">
+            <div className="About__section">
               <h3>Координационный совет</h3>
               <p>
                 Руководство деятельностью Консорциума осуществляет
@@ -181,8 +172,6 @@ const About: FC = () => {
           <aside className="About__sidebar">
             <div
               className="About__sidebar-box"
-              data-aos="fade-left"
-              data-aos-delay="200"
             >
               <h3>Навигация</h3>
               <ul>
