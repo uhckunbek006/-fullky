@@ -1,0 +1,353 @@
+$primary-color: #0f172a;
+$accent-color: #2563eb;
+$border-color: #e2e8f0;
+$bg-light: #f8fafc;
+
+.adminDashboard {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: $primary-color;
+
+  .dashboardHeader {
+    margin-bottom: 28px;
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      span {
+        color: #64748b;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.adminGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modernForm {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid $border-color;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+
+  .sectionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $accent-color;
+    margin: 24px 0 14px 0;
+    border-bottom: 1px solid #eff6ff;
+    padding-bottom: 6px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .formRow {
+    display: flex;
+    gap: 16px;
+    .flex1 {
+      flex: 1;
+    }
+    .flex2 {
+      flex: 2;
+    }
+
+    @media (max-width: 530px) {
+    display: flex;
+    flex-direction: column;
+  }
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      font-size: 14px;
+      background: $bg-light;
+      box-sizing: border-box;
+      font-family: inherit;
+      color: $primary-color;
+
+      &:focus {
+        outline: none;
+        background: #fff;
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  .modeTabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    button {
+      background: #e2e8f0;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #475569;
+
+      &.active {
+        background: $accent-color;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .urlInputBox {
+    display: flex;
+    gap: 10px;
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      background: $primary-color;
+      color: #fff;
+      border: none;
+      padding: 0 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  
+  .fileDropzone {
+    input[type="file"] {
+      display: none;
+    }
+
+    .dropzoneLabel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: $bg-light;
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      color: #64748b;
+
+      &:hover {
+        border-color: $accent-color;
+        color: $accent-color;
+      }
+    }
+  }
+
+  /* ПРЕВЬЮ СҮРӨТТӨР */
+  .previewBox {
+    position: relative;
+    width: 160px;
+    height: 110px;
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid $border-color;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+
+  .mainPreview {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    margin-top: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    button {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+  }
+
+  .galleryPreviewGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+
+    .galleryItem {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      button {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .saveBtn {
+    width: 100%;
+    background: $primary-color;
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+      background: #1e293b;
+    }
+  }
+}
+
+.livePreview {
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .emptyText {
+    color: #94a3b8;
+    font-size: 14px;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+
+    .imageBox {
+      position: relative;
+      height: 220px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: rgba(120, 130, 140, 0.75);
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+    }
+
+    .bodyBox {
+      padding: 20px;
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .excerpt {
+        font-size: 13px;
+        color: #555;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .readMore {
+        font-size: 12px;
+        font-weight: 800;
+        color: #000;
+      }
+    }
+
+    .footerBox {
+      padding: 12px 20px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+  }
+}

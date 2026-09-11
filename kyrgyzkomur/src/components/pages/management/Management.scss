@@ -1,0 +1,211 @@
+:root {
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --card-hover-border: #0284c7;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --blue-primary: #0284c7;
+  --blue-light-bg: #f0f9ff;
+  --border-subtle: #e2e8f0;
+}
+
+#Management {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  padding: 80px 0;
+  min-height: 80vh;
+
+  .Management {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+
+    &__content {
+      flex: 1;
+    }
+
+    &__header {
+      margin-bottom: 36px;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        letter-spacing: 0.02em;
+      }
+    }
+
+    &__line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        var(--blue-primary) 0%,
+        rgba(2, 132, 199, 0.2) 60%,
+        transparent 100%
+      );
+    }
+
+    &__grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+
+      &:hover {
+        border-color: var(--card-hover-border);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
+      }
+    }
+
+    &__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: var(--blue-light-bg);
+      border: 1px solid rgba(2, 132, 199, 0.15);
+      color: var(--blue-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    &__info {
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 6px;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: var(--blue-primary);
+        font-weight: 500;
+      }
+    }
+
+    &__sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 150px;
+      z-index: 10;
+    }
+
+    &__sidebar-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-main);
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-subtle);
+        margin-bottom: 16px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        li {
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: var(--blue-light-bg);
+              color: var(--blue-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #Management {
+    padding: 48px 0;
+
+    .Management {
+      flex-direction: column;
+      gap: 40px;
+
+      &__sidebar {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #Management {
+    .Management {
+      &__header h2 {
+        font-size: 22px;
+      }
+
+      &__card {
+        padding: 16px;
+        gap: 14px;
+      }
+
+      &__icon {
+        width: 44px;
+        height: 44px;
+
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      &__info {
+        h3 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
