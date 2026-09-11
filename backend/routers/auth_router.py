@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from models import User
 from schemas import RegisterRequest, LoginRequest, TokenResponse, UserOut
-from auth import hash_password, verify_password, create_access_token
+from auth import hash_password, verify_password, create_access_token, get_current_user
 
 router = APIRouter(tags=["Auth"])
 
@@ -55,3 +55,15 @@ def login(body: LoginRequest, db: Session = Depends(get_db)):
 
     token = create_access_token({"sub": str(user.id)})
     return TokenResponse(token=token, user=UserOut.model_validate(user))
+
+
+@router.post("/logout", status_code=status.HTTP_200_OK)
+def logout(current_user: User = Depends(get_current_user)):
+    """
+    Logout endpoint.
+    На стороне клиента токен должен быть удалён из хранилища.
+    """
+    return {
+        "message": "Ийгиликтүү чыктыңыз",
+        "user_id": current_user.id
+    }
