@@ -1,10 +1,10 @@
-import Contact from "@/src/components/pages/contact/Contact";
+import ContactWrapper from "@/src/components/pages/ContactWrapper";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <Contact />
+      <ContactWrapper />
     </div>
   );
 };

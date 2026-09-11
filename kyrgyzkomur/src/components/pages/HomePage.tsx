@@ -1,13 +1,13 @@
 import React from "react";
 import Hero from "./hero/Hero";
 import NewHero from "./hero/NewHero";
-import BasesMap from "./basesMap/BasesMap";
+import BasesMapWrapper from "./BasesMapWrapper";
 
 const HomePage = () => {
   return (
     <div>
       <Hero />
-      <BasesMap />
+      <BasesMapWrapper />
       <NewHero />
     </div>
   );

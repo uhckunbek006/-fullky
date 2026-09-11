@@ -4,31 +4,10 @@ import { FC, useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import { Navigation, Phone, Clock, MapPin, Compass } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "leaflet/dist/leaflet.css";
 import "./BasesMap.scss";
 
 import { COAL_BASES, CoalBase } from "../basaSelector/BasaSelector";
-
-const defaultIcon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-});
-
-const userIcon = L.divIcon({
-  className: "user-location-marker",
-  html: `<div class="pulse-dot"></div>`,
-  iconSize: [20, 20],
-  iconAnchor: [10, 10],
-});
-
-L.Marker.prototype.options.icon = defaultIcon;
 
 const RecenterMap: FC<{ center: [number, number]; zoom?: number }> = ({
   center,
@@ -42,12 +21,7 @@ const RecenterMap: FC<{ center: [number, number]; zoom?: number }> = ({
   return null;
 };
 
-function calculateDistance(
-  lat1: number,
-  lon1: number,
-  lat2: number,
-  lon2: number,
-): number {
+function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLon = ((lon2 - lon1) * Math.PI) / 180;
@@ -75,13 +49,23 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
   const [geoLoading, setGeoLoading] = useState(false);
   const [geoError, setGeoError] = useState<string | null>(null);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 700,
-      easing: "ease-out-cubic",
-      once: true,
-    });
-  }, []);
+  const defaultIcon = L.icon({
+    iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+    iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  });
+
+  const userIcon = L.divIcon({
+    className: "user-location-marker",
+    html: `<div class="pulse-dot"></div>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+
+  L.Marker.prototype.options.icon = defaultIcon;
 
   const handleDetectLocation = () => {
     if (!navigator.geolocation) {
@@ -121,7 +105,7 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
     <section id="BasesMap">
       <div className="container">
         <div className="BasesMap">
-          <div className="BasesMap--header" data-aos="fade-down">
+          <div className="BasesMap--header">
             <div className="title">
               <MapPin size={20} />
               <div>
@@ -135,8 +119,6 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
               className={`geo-btn ${geoLoading ? "loading" : ""}`}
               onClick={handleDetectLocation}
               disabled={geoLoading}
-              data-aos="zoom-in"
-              data-aos-delay="200"
             >
               <Compass size={16} />
               <span>{geoLoading ? "Определение..." : "Найти ближайшую"}</span>
@@ -144,7 +126,7 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
           </div>
 
           {geoError && (
-            <div className="BasesMap--error" data-aos="fade-in">
+            <div className="BasesMap--error">
               {geoError}
             </div>
           )}
@@ -152,7 +134,7 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
           {/* MAIN CONTENT AREA */}
           <div className="BasesMap--content">
             {/* MAP SECTION */}
-            <div className="map-wrapper" data-aos="fade-right" data-aos-delay="150">
+            <div className="map-wrapper">
               <MapContainer
                 center={mapCenter}
                 zoom={11}
@@ -198,7 +180,7 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
             </div>
 
             {/* SIDEBAR LIST */}
-            <div className="bases-sidebar" data-aos="fade-left" data-aos-delay="250">
+            <div className="bases-sidebar">
               <h4>Список баз ({bases.length})</h4>
               <div className="bases-list">
                 {bases.map((base, idx) => {
@@ -213,9 +195,7 @@ const BasesMap: FC<BasesMapProps> = ({ onSelectBase }) => {
                         setSelectedBase(base);
                         setMapCenter([base.lat, base.lng]);
                       }}
-                      data-aos="fade-up"
                       data-aos-delay={100 + idx * 80}
-                      data-aos-anchor=".bases-sidebar"
                     >
                       <div className="base-item--head">
                         <span className="region">{base.region}</span>
