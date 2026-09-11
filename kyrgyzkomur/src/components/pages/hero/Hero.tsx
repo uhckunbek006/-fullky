@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./Hero.scss";
 
 const cardsData = [
@@ -46,11 +44,6 @@ const cardsData = [
 
 const Hero = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-out-cubic",
-    });
   }, []);
 
   return (
@@ -60,13 +53,13 @@ const Hero = () => {
 
       <div className="container">
         <div className="hero-wrapper">
-          <div className="hero-text" data-aos="fade-right">
-            <h1 data-aos="fade-up" data-aos-delay="200">
+          <div className="hero-text">
+            <h1>
               Тепло и уют в ваш дом: <br />
               <span className="gradient-text">Отборный уголь</span> с доставкой
             </h1>
 
-            <p data-aos="fade-up" data-aos-delay="300">
+            <p>
               Поставляем высококалорийный уголь Кара-Кече прямо к вашему порогу.
               Быстро, надежно и по честным ценам.
             </p>
@@ -74,8 +67,6 @@ const Hero = () => {
 
           <div
             className="carousel-3d-scene"
-            data-aos="fade-left"
-            data-aos-delay="300"
           >
             <div className="carousel-3d-spinner">
               {cardsData.map((card, index) => (

@@ -43,16 +43,13 @@ const TopBar: FC = () => {
   }, []);
 
   return (
-    <div id="TopBar" data-aos="fade-down" data-aos-duration="600">
+    <div id="TopBar">
       <div className="container">
         <div className="TopBar">
           <div className="TopBar__actions">
             <Link
               href="/qr_login"
               className="TopBar__btn TopBar__btn--secondary"
-              data-aos="fade-down"
-              data-aos-duration="600"
-              data-aos-delay="100"
             >
               <QrCode size={18} />
               <span>БОРБОР — QR ВХОД</span>
@@ -62,9 +59,6 @@ const TopBar: FC = () => {
               <Link
                 href="/profile"
                 className="TopBar__btn TopBar__btn--primary"
-                data-aos="fade-down"
-                data-aos-duration="600"
-                data-aos-delay="200"
               >
                 <User size={18} />
                 <span>{user.username}</span>
@@ -73,9 +67,6 @@ const TopBar: FC = () => {
               <Link
                 href="/login"
                 className="TopBar__btn TopBar__btn--primary"
-                data-aos="fade-down"
-                data-aos-duration="600"
-                data-aos-delay="200"
               >
                 <LogIn size={18} />
                 <span>ВОЙТИ</span>

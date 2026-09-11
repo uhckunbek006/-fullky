@@ -9,10 +9,7 @@ import {
   Send,
   Upload,
 } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./Vacancies.scss";
-
 interface VacancyItem {
   id: number;
   title: string;
@@ -80,16 +77,8 @@ const Vacancies: FC = () => {
   const selectedPhoto = watch("photo");
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      easing: "ease-in-out",
-    });
-
     const timer = setTimeout(() => {
-      AOS.refresh();
     }, 100);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -134,9 +123,6 @@ const Vacancies: FC = () => {
 
   const toggleDept = (id: string) => {
     setOpenDeptId((item) => (item === id ? null : id));
-    setTimeout(() => {
-      AOS.refresh();
-    }, 350);
   };
 
   const handleOpenModal = (deptTitle: string, vacancyTitle: string) => {
@@ -207,27 +193,25 @@ const Vacancies: FC = () => {
     <section id="Vacancies">
       <div className="container">
         <div className="Vacancies">
-          <h1 data-aos="fade-up">Вакансии</h1>
+          <h1>Вакансии</h1>
 
-          <p className="greeting" data-aos="fade-up" data-aos-delay="100">
+          <p className="greeting">
             Уважаемые соискатели!
           </p>
 
-          <p className="description" data-aos="fade-up" data-aos-delay="150">
+          <p className="description">
             Государственное предприятие «Кыргызкомур» при Министерстве
             энергетики Кыргызской Республики объявляет о наличии вакантных
             должностей в центральном аппарате и филиалах предприятия.
           </p>
 
-          <p className="description" data-aos="fade-up" data-aos-delay="200">
+          <p className="description">
             Для получения подробной информации и подачи документов, просим
             обращаться по следующим контактным номерам:
           </p>
 
           <ul
             className="Vacancies--block"
-            data-aos="fade-up"
-            data-aos-delay="250"
           >
             <li className="Vacancies--block__card">
               <div className="card-icon">
@@ -280,18 +264,18 @@ const Vacancies: FC = () => {
             </li>
           </ul>
 
-          <p className="description" data-aos="fade-up">
+          <p className="description">
             Рассмотрение поступающих заявлений и прилагаемых документов
             осуществляется в порядке, установленном внутренними нормативными
             актами ГП «Кыргызкомур».
           </p>
 
-          <p className="description" data-aos="fade-up">
+          <p className="description">
             Благодарим Вас за интерес, проявленный к деятельности нашего
             предприятия, и желаем успехов в трудоустройстве!
           </p>
 
-          <div className="Vacancies--accordion" data-aos="fade-up">
+          <div className="Vacancies--accordion">
             {vacanciesLoading ? (
               <p style={{ padding: "16px" }}>Загрузка...</p>
             ) : (

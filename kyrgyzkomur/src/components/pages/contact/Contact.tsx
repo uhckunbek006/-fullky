@@ -604,7 +604,7 @@ const Contact: FC = () => {
   return (
     <section id="Contact">
       <div className="container">
-        <h1 className="header" data-aos="zoom-in" data-aos-duration="700">
+        <h1 className="header">
           Контакты и Филиалы
         </h1>
 
@@ -612,8 +612,6 @@ const Contact: FC = () => {
           <div className="Contact--head">
             <div
               className="Contact--head__right"
-              data-aos="fade-right"
-              data-aos-duration="800"
             >
               <ShieldAlert className="defence" />
 
@@ -626,8 +624,6 @@ const Contact: FC = () => {
 
             <div
               className="Contact--head__left"
-              data-aos="fade-left"
-              data-aos-duration="800"
             >
               <Building2 className="icon" />
 
@@ -640,9 +636,6 @@ const Contact: FC = () => {
           <div className="Contact--body">
             <div
               className="Contact--body__left"
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-delay="100"
             >
               <h3>
                 <Building2 />
@@ -661,9 +654,6 @@ const Contact: FC = () => {
 
             <div
               className="Contact--body__right"
-              data-aos="fade-left"
-              data-aos-duration="800"
-              data-aos-delay="100"
             >
               <h3>
                 <MapPin />
@@ -686,8 +676,6 @@ const Contact: FC = () => {
           {page === 0 ? (
             <div
               className="Contact--footer"
-              data-aos="zoom-in"
-              data-aos-duration="800"
             >
               <div className="Contact--footer__head">
                 <h3>Мы на карте</h3>
@@ -718,9 +706,6 @@ const Contact: FC = () => {
           {page === 1 ? (
             <div
               className="Contact--footer"
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-delay="100"
             >
               <div className="Contact--footer__map">
                 <MapContainer

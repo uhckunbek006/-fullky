@@ -1,10 +1,8 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import { User, ShieldCheck, ChevronRight } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./Management.scss";
 
 interface ILeader {
@@ -38,19 +36,12 @@ const navLinks = [
 ];
 
 const Management: FC = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
-
   return (
     <section id="Management">
       <div className="container">
         <div className="Management">
           <div className="Management__content">
-            <div className="Management__header" data-aos="fade-right">
+            <div className="Management__header">
               <h2>Руководство ОАО «Кыргызкөмүр»</h2>
               <div className="Management__line"></div>
             </div>
@@ -60,7 +51,6 @@ const Management: FC = () => {
                 <div
                   key={item.id}
                   className="Management__card"
-                  data-aos="fade-up"
                   data-aos-delay={100 + index * 100}
                 >
                   <div className="Management__icon">
@@ -81,8 +71,6 @@ const Management: FC = () => {
           <aside className="Management__sidebar">
             <div
               className="Management__sidebar-box"
-              data-aos="fade-left"
-              data-aos-delay="200"
             >
               <h3>Навигация</h3>
               <ul>

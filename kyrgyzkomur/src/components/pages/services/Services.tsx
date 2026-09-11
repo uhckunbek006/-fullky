@@ -86,14 +86,9 @@ const Services: FC = () => {
         <div className="Services">
           <div
             className="Services--block"
-            data-aos="zoom-in"
-            data-aos-duration="800"
           >
             <div
               className="Services--block__head"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="150"
             >
               <Image src={logo} alt="logo" width={60} height={60} />
               <h1>Личный кабинет</h1>
@@ -103,9 +98,6 @@ const Services: FC = () => {
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div
                 className="Services--block__group"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="250"
               >
                 <span>Логин</span>
                 <div className="Services--block__input">
@@ -127,9 +119,6 @@ const Services: FC = () => {
 
               <div
                 className="Services--block__group"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="350"
               >
                 <span>Пароль</span>
                 <div className="Services--block__input">
@@ -167,9 +156,6 @@ const Services: FC = () => {
 
               <div
                 className="Services--block__actions"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="450"
               >
                 <label className="Services--block__checkbox">
                   <input type="checkbox" {...register("rememberMe")} />
@@ -181,9 +167,6 @@ const Services: FC = () => {
                 type="submit"
                 className="Services--block__submit"
                 disabled={isSubmitting}
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="550"
               >
                 <span>{isSubmitting ? "Вход..." : "Войти"}</span>
                 <LogIn size={18} />
@@ -191,9 +174,6 @@ const Services: FC = () => {
 
               <p
                 className="Services--block__register"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="600"
               >
                 Аккаунтуңуз жокпу?{" "}
                 <Link

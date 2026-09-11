@@ -83,14 +83,9 @@ const Register = () => {
         <div className="Services">
           <div
             className="Services--block"
-            data-aos="zoom-in"
-            data-aos-duration="800"
           >
             <div
               className="Services--block__head"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="150"
             >
               <Image src={logo} alt="logo" width={60} height={60} />
               <h1>Каттоо</h1>
@@ -100,9 +95,6 @@ const Register = () => {
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div
                 className="Services--block__group"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="200"
               >
                 <span>Толук аты</span>
                 <div className="Services--block__input">
@@ -128,9 +120,6 @@ const Register = () => {
 
               <div
                 className="Services--block__group"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="300"
               >
                 <span>Email</span>
                 <div className="Services--block__input">
@@ -156,9 +145,6 @@ const Register = () => {
 
               <div
                 className="Services--block__group"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="400"
               >
                 <span>Пароль</span>
                 <div className="Services--block__input">
@@ -198,9 +184,6 @@ const Register = () => {
                 type="submit"
                 className="Services--block__submit"
                 disabled={isSubmitting}
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="600"
               >
                 <span>
                   {isSubmitting
@@ -212,9 +195,6 @@ const Register = () => {
 
               <p
                 className="Services--block__register"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="700"
               >
                 Аккаунтуңуз барбы?{" "}
                 <Link href="/login" className="Services--block__register-link">

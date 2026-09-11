@@ -450,8 +450,6 @@ export default function Admin() {
           <form
             className="modernForm"
             onSubmit={handleSubmit}
-            data-aos="fade-up"
-            data-aos-duration="3000"
           >
             <div className="sectionTitle">1. Негизги маалыматтар</div>
 
@@ -637,8 +635,6 @@ export default function Admin() {
 
           <div
             className="livePreview"
-            data-aos="fade-up"
-            data-aos-duration="3000"
           >
             <h3>Сайттагы көрүнүшү:</h3>
             {articles.length === 0 ? (

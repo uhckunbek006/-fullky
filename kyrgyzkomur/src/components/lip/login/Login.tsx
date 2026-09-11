@@ -70,15 +70,15 @@ const Login = () => {
     <section id="register">
       <div className="container">
         <div className="Services">
-          <div className="Services--block" data-aos="zoom-in" data-aos-duration="800">
-            <div className="Services--block__head" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+          <div className="Services--block">
+            <div className="Services--block__head">
               <Image src={logo} alt="logo" width={60} height={60} />
               <h1>Кирүү</h1>
               <span>Личный кабинет</span>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <div className="Services--block__group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+              <div className="Services--block__group">
                 <span>Email</span>
                 <div className="Services--block__input">
                   <Mail className="icon" size={18} />
@@ -97,7 +97,7 @@ const Login = () => {
                 {errors.email && <p className="Services--block__error">{errors.email.message}</p>}
               </div>
 
-              <div className="Services--block__group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+              <div className="Services--block__group">
                 <span>Пароль</span>
                 <div className="Services--block__input">
                   <Lock className="icon" size={18} />
@@ -127,15 +127,12 @@ const Login = () => {
                 type="submit"
                 className="Services--block__submit"
                 disabled={isSubmitting}
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="400"
               >
                 <span>{isSubmitting ? "Кирүүдө..." : "Кирүү"}</span>
                 <LogIn size={18} />
               </button>
 
-              <p className="Services--block__register" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+              <p className="Services--block__register">
                 Аккаунтуңуз жокпу?{" "}
                 <Link href="/login?mode=register" className="Services--block__register-link">
                   Каттоо

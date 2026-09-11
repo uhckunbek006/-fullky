@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./NewHero.scss";
 import Link from "next/link";
 
@@ -32,14 +30,7 @@ const NewHero = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
-
-  useEffect(() => {
+  }, []);  useEffect(() => {
     if (!API_URL) {
       console.error(
         "NEXT_PUBLIC_API_URL табылган жок (.env файлын текшериңиз).",
@@ -98,14 +89,13 @@ const NewHero = () => {
 
   useEffect(() => {
     if (!isLoading && products.length > 0) {
-      AOS.refresh();
     }
   }, [isLoading, products]);
 
   return (
     <section id="newHero">
       <div className="container">
-        <div className="newHero__top" data-aos="fade-down">
+        <div className="newHero__top">
           <div>
             <h2>НОВОСТИ И ПРЕСС-ЦЕНТР</h2>
             <span></span>
@@ -131,7 +121,6 @@ const NewHero = () => {
               <article
                 className="newHero__card"
                 key={item.id}
-                data-aos="fade-up"
                 data-aos-delay={index * 150}
               >
                 <div className="newHero__image">
