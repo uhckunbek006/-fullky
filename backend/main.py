@@ -13,6 +13,7 @@ from routers.auth_router import router as auth_router
 from routers.products_router import router as products_router
 from routers.vacancy_router import router as vacancy_router
 from routers.admin_router import router as admin_router
+from routers.user_router import router as user_router
 
 # ─── Создать таблицы при старте ───
 Base.metadata.create_all(bind=engine)
@@ -44,6 +45,7 @@ app.include_router(auth_router)
 app.include_router(products_router)
 app.include_router(vacancy_router)
 app.include_router(admin_router)
+app.include_router(user_router)
 
 
 # ─── Health check ───
